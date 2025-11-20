@@ -1,0 +1,469 @@
+.Frames {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.Frames > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 8px;
+    box-sizing: border-box;
+
+    position: absolute;
+    width: calc(3em + 2px);
+    height: 100%;
+
+    background-color: var(--BackgroundTertiary);
+}
+
+.Sidebar[Active] {
+    width: calc(15em + 4px);
+}
+
+.Sidebar > .Profile {
+    position: absolute;
+    bottom: 8px;
+
+    width: calc(100% - 16px);
+}
+
+.Sidebar > span {
+    color: var(--TextColorTertiary);
+}
+
+.Sidebar > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 8px 0 4px;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 2em;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.Sidebar > div > img {
+    height: 75%;
+    aspect-ratio: 1 / 1;
+}
+
+.Sidebar > div:not(.Patch) > img {
+    border-radius: 100%;
+}
+
+.Sidebar > div:hover {
+    background-color: var(--Background);
+}
+
+.Sidebar:not([Active]) span {
+    opacity: 0;
+}
+
+.Sidebar > hr {
+    width: 100%;
+    background-color: var(--TextColorPrimary);
+}
+
+.Sidebar:not([Active]) > hr {
+    opacity: 0.25;
+}
+
+.Profile {
+    overflow: hidden;
+}
+
+.Profile > img {
+    box-sizing: border-box;
+    border: 1px solid var(--TextColorPrimary);
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+}
+
+.Profile > button {
+    outline: none;
+    border: none;
+
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    width: 100%;
+
+    font-weight: 600;
+
+    padding: 2px 0 2px 0;
+    border: 1px solid transparent;
+
+    text-wrap: nowrap;
+
+    cursor: pointer;
+}
+
+.Profile > button:hover {
+    background-color: transparent;
+    border-color: var(--TextColorPrimary);
+    color: var(--TextColorPrimary);
+}
+
+[href="Account"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 8px;
+}
+
+[href="Account"] > * {
+    display: flex;
+    align-items: center;
+
+    outline: none;
+    border: none;
+
+    box-sizing: border-box;
+    width: 50%;
+    height: 28px;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    text-align: left;
+
+    padding: 2px 0 2px 8px;
+
+    border-radius: 8px;
+}
+
+[href="Account"] > :not(span):hover, [href="Account"] > :not(span):focus {
+    height: 42px;
+    border-color: var(--TextColorPrimary);
+    background: transparent;
+}
+
+[href="Account"] > button {
+    padding: 2px 0 2px 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+[href="Account"] > input, [href="Account"] > button {
+    background: var(--ForegroundPrimary);
+    border: 1px solid var(--ForegroundSecondary);
+    color: var(--TextColorPrimary);
+}
+
+[href="Account"] > span {
+    color: var(--TextColorTertiary);
+    cursor: pointer;
+}
+[href="Account"] > span:hover { color: var(--TextColorPrimary) }
+
+.Chat {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: calc(100% - calc(3em + 2px));
+}
+
+.Chat[Active] {
+    width: calc(100% - calc(15em + 4px));
+}
+
+.Chat > .Message {
+    position: relative;
+
+    margin: 4px;
+    margin-bottom: 0;
+    padding: 4px;
+
+    background-color: var(--ForegroundSecondary);
+    padding-bottom: 8px;
+    border-radius: 8px;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    box-sizing: border-box;
+    border: 2px solid transparent;
+
+    width: calc(100% - 8px);
+    overflow: hidden;
+}
+
+.Chat > .Message:hover {
+    border-color: var(--TextColorTertiary);
+}
+
+.Chat > .Message > .ProfileImage {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    height: 36px;
+}
+
+.Chat > .Message > .Headers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    position: absolute;
+    left: 48px;
+    top: 2px;
+
+    font-size: 12px;
+
+    width: 100%;
+    height: 24px;
+    overflow: hidden;
+}
+
+.Chat > .Message > .Headers > .Timestamp {
+    position: relative;
+    top: 50%;
+    transform: translateY(-80%);
+    opacity: 0.5;
+    font-weight: 0;
+}
+
+.Chat > .Message > .Headers > .Username {
+    font-size: 16px;
+}
+
+.Chat > .Message > .Headers > .Username:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Chat > .Message > .Content {
+    margin-top: 8px;
+    padding-left: 8px;
+    overflow: hidden;
+}
+
+.Chat > .Message > .Content > img {
+    box-sizing: border-box;
+    border: 2px solid var(--TextColorTertiary);
+    border-radius: 8px;
+}
+
+.Chat > .InputContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4px;
+    
+    width: calc(100% - 24px);
+    height: 24px;
+
+    padding: 8px;
+
+    border-radius: 8px;
+}
+
+.Chat > .InputContainer > .AddAttachmentButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8px;
+
+    height: 75%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.Chat > .InputContainer > .AddAttachmentButton:hover {
+    background-color: var(--ForegroundSecondary);
+}
+
+.Chat > .InputContainer > .SendMessageButton {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 75%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.Chat > .InputContainer > .SendMessageButton:hover {
+    background-color: var(--ForegroundSecondary);
+}
+
+.Chat > .InputContainer > input {
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--TextColorPrimary);
+
+    margin-left: 36px;
+}
+
+.Chat:has(.InputContainer > input:focus) > .InputContainer {
+    background-color: var(--Background);
+}
+
+.Chat > .ConversationContainer {
+    position: absolute;
+    left: calc(50% - 8px);
+    transform: translateX(-50%);
+    top: 4px;
+    
+    width: calc(100% - 24px);
+    height: 24px;
+}
+
+.Chat > .ConversationContainer > input {
+    width: calc(100% - 64px - 16px);
+    height: 100%;
+
+    padding: 8px;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    color: var(--TextColorPrimary);
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.Chat > .ConversationContainer > input:focus {
+    background-color: var(--Background);
+}
+
+.Chat > .ConversationContainer > button {
+    position: absolute;
+
+    background-color: var(--ForegroundSecondary);
+    border: none;
+    outline: none;
+    padding: 0;
+
+    height: 40px;
+    width: 80px;
+    right: -16px;
+    top: 0;
+
+    cursor: pointer;
+
+    color: var(--TextColorPrimary);
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.Chat > .ConversationContainer > button:hover {
+    background-color: var(--ForegroundPrimary);
+}
+
+.Chat > .Patch {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 24px);
+    transform: translate(-50%, -50%);
+    width: 64px;
+    aspect-ratio: 1 / 1;
+    opacity: 0.25;
+    z-index: -1;
+}
+
+.Chat > .AttachmentContainer:has(> header:only-child) {
+    opacity: 0;
+}
+
+.Chat > .AttachmentContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 4px;
+
+    margin: 4px;
+    margin-bottom: 0;
+
+    position: absolute;
+    bottom: 48px;
+
+    height: 5em;
+
+    box-sizing: border-box;
+    border: 2px solid var(--TextColorTertiary);
+    border-radius: 8px;
+}
+
+.Chat > .AttachmentContainer > header {
+    position: absolute;
+    top: -27.5%;
+    left: 0;
+}
+
+.Chat > .AttachmentContainer > img {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    box-sizing: border-box;
+    border: 2px solid var(--TextColorTertiary);
+    border-radius: 8px;
+}
+
+.Chat > .AttachmentContainer > img:hover {
+    border-color: color-mix(in srgb, var(--Foreground), rgb(255, 89, 89) 50%);
+    transform: rotate(11.25deg);
+    cursor: pointer;
+}
+
+.Tip {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+
+    padding: 8px;
+    
+    box-sizing: border-box;
+    border: 2px solid var(--TextColorTertiary);
+    border-radius: 8px;
+
+    z-index: 4;
+}
+
+.Tip:hover {
+    border-color: color-mix(in srgb, var(--TextColorTertiary), rgb(255, 89, 89) 50%);
+    transform: translateX(-50%) rotate(5.625deg);
+    cursor: pointer;
+}

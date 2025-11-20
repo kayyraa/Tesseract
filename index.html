@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="scripts/style/format.css">
+        <link rel="stylesheet" href="scripts/style/style.css">
+        <link rel="shortcut icon" href="images/Favicon.svg" type="image/x-icon">
+        
+        <script type="module" src="scripts/global.d.js"></script>
+        <script type="module" src="scripts/account.js"></script>
+        <script type="module" src="scripts/chats.js"></script>
+        <script type="module" src="scripts/hud.js"></script>
+
+        <title>Tesseract</title>
+    </head>
+    <body>
+        <span style="display: none; opacity: 0;" class="Tip"></span>
+        <div class="Frames">
+            <div style="opacity: 1;" href="Loading">
+                <div class="Loader">
+                    <span>Loading</span>
+                    <span>Tesseract Client</span>
+               </div>
+            </div>
+            <div style="display: none; opacity: 0;" href="App">
+                <div class="Sidebar">
+                    <div class="Patch Home" style="background-color: transparent;">
+                        <img src="images/Favicon.svg">
+                        <span>Tesseract</span>
+                    </div>
+                    <hr>
+                    <span style="font-weight: 600;">Chats</span>
+                    <div style="display: none;" class="ConversationTemplate"><img src="images/NotFound.png"><span>Template</span></div>
+                    <div class="Profile">
+                        <img src="images/NotFound.png">
+                        <span class="Name">~#~~~~</span>
+                        <button class="SignOut">Sign Out</button>
+                    </div>
+                </div>
+                <div class="Chat">
+                    <img class="Patch" src="images/Favicon.svg">
+                    <div class="ConversationContainer">
+                        <input class="ConversationInput" type="text" placeholder="Write the Name#Tag to start a conversation">
+                        <button class="CreateButton">Create</button>
+                    </div>
+                    <div class="AttachmentContainer"><header>Attachments</header></div>
+                    <div class="InputContainer">
+                        <img class="AddAttachmentButton" src="images/Attachment.png">
+                        <input class="MessageInput" type="text" placeholder="">
+                        <img style="opacity: 0;" src="images/Send.svg" class="SendMessageButton">
+                    </div>
+                </div>
+            </div>
+            <div style="display: none; opacity: 0;" href="Account">
+                <span onclick="location.reload()">Tesseract</span>
+                <input autocomplete="off" class="Name" type="text" placeholder="Name">
+                <input autocomplete="off" class="Password" type="text" placeholder="Password">
+                <button>Sign In</button>
+            </div>
+        </div>
+    </body>
+</html>
